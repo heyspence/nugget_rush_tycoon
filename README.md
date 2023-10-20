@@ -14,6 +14,7 @@ In addition, this project will include:
 * A loading screen
 * Pause Button
 * Set a maximum amount of gold
+* Refactor config file
 
 
 ## WireFrames

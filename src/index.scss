@@ -1,6 +1,76 @@
+@import './styles/reset.scss';
 @import './styles/example.scss';
+@import './styles/clickable-object.scss';
 
-#main {
-    color: purple;
+h1 {
+    font-family: sans-serif;
+    font-size: 40px;
+    color: black;
 }
 
+.main-page {
+    background-color: rgb(183 142 114);
+    border: 2px outset rgb(85 146 141);
+    border-radius: 10px;
+}
+
+#background {
+    background-color: rgb(97 176 192);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 4px outset rgb(85 146 141);
+    width: 1000px;
+    height: 600px;
+    border-radius: 8px;
+    margin: 50px;
+}
+
+#header-container{
+    display: flex;
+}
+
+#main-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-header {
+    height: 80px;
+    flex: 1;
+    border-radius: 8px;
+    margin: 15px 15px 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-title-container {
+    height: 200px;
+    width: 215px;
+    margin-top: -15px;
+    margin-left: 30px;
+    // background-color: rgb(137 230 203);
+    // border: 4px outset rgb(85 146 141);
+    // border-radius: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#main-title-container img {
+    height: 300px;
+    width: auto;
+    rotate: 13deg;
+}
+
+#main-shop {
+    width: 260px;
+    height: 465px;
+    margin: 10px 20px 20px 10px;
+}
+
+#canvas {
+    width: 720px;
+    height: 465px;
+    margin: 10px 5px 20px 20px;
+}
