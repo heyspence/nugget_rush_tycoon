@@ -28,6 +28,11 @@ class HeaderContent {
         const menuEle = document.querySelector("#main-menu");
         menuEle.innerHTML = '<h2>Menu</h2>'
     }
+
+    resetTotal(){
+        this.cashOnHand = 0
+        this.renderTotal()
+    }
 }
 
 export default HeaderContent

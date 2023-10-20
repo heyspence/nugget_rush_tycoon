@@ -15,18 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
         size: [720, 465]
     }
 
-    const background = new Background(ctx, options)
+    new Background(ctx, options)
     
     const headerContent = new HeaderContent()
     canvas.addEventListener("click", headerContent.countClicks.bind(headerContent))
 
-    const shopContent = new ShopContent()
+    new ShopContent(headerContent)
 
-    // const clickableObjectOptions = {
-    //     color: "red",
-    //     pos: [0, 0],
-    //     size: [100, 100]
-    // }
-    // const clickableObject = new ClickableObject(ctx, clickableObjectOptions)
+    const clickableObjectOptions = {
+        color: "red",
+        pos: [0, 0],
+        size: [100, 100]
+    }
+    new ClickableObject(ctx, clickableObjectOptions)
 })
     
