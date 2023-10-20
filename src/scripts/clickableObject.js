@@ -4,28 +4,27 @@ class ClickableObject{
         this.color = options.color;
         this.size = options.size;
         this.pos = options.pos;
-        this.counter = 0
+        this.counter = 0;
 
-        this.draw(this.ctx)
-        document.addEventListener("click", this.changeColor.bind(this))
-
-        console.log("clickable object has been loaded")
+        this.draw(this.ctx);
     }
 
     draw(ctx) {
         ctx.fillStyle = this.color;
-        ctx.fillRect(...this.pos, ...this.size)
+        ctx.fillRect(...this.pos, ...this.size);
         ctx.fill();
+
+        console.log("clickable object has been loaded");
     }
 
     changeColor(){
-        this.counter++
-        console.log("clicked " + `${this.counter}` + " times")
-        this.className = "red"
+        this.counter++;
+        console.log("clicked " + `${this.counter}` + " times");
+        this.className = "red";
     }
 
 }
 
-window.ClickableObject = ClickableObject
+window.ClickableObject = ClickableObject;
 
-export default ClickableObject
+export default ClickableObject;
