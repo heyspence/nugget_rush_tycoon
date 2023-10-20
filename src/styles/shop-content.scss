@@ -19,6 +19,15 @@
     justify-content: center;
 }
 
+#main-stats{
+    width: 180px;
+    height: 120px;
+    margin: 5px;
+    background-color: rgb(97 176 192);
+    border: 3px solid rgb(85 146 141);
+    border-radius: 4px;
+}
+
 .shop-item:hover{
     border: 2px solid rgb(85, 146, 141);
 }

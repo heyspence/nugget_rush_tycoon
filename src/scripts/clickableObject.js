@@ -16,13 +16,6 @@ class ClickableObject{
 
         console.log("clickable object has been loaded");
     }
-
-    changeColor(){
-        this.counter++;
-        console.log("clicked " + `${this.counter}` + " times");
-        this.className = "red";
-    }
-
 }
 
 window.ClickableObject = ClickableObject;

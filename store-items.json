@@ -1,0 +1,49 @@
+{
+    "store-items":[
+        {
+            "name": "Medicine",
+            "price": "10",
+            "imgSrc": ""
+        },
+        {
+            "name": "Pistol",
+            "price": "20",
+            "imgSrc": ""
+        },
+        {
+            "name": "Horse",
+            "price": "30",
+            "imgSrc": ""
+        },
+        {
+            "name": "Sluice Box",
+            "price": "50",
+            "imgSrc": ""
+        },
+        {
+            "name": "Young Hired Hand",
+            "price": "60",
+            "imgSrc": ""
+        },
+        {
+            "name": "Experienced Hired Hand",
+            "price": "70",
+            "imgSrc": ""
+        },
+        {
+            "name": "Auto Plant",
+            "price": "100",
+            "imgSrc": ""
+        },
+        {
+            "name": "House",
+            "price": "1000",
+            "imgSrc": ""
+        },
+        {
+            "name": "Hotel",
+            "price": "200000",
+            "imgSrc": ""
+        }
+    ]
+}
