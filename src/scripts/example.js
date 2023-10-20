@@ -1,8 +1,8 @@
 class Example {
-    constructor(ele){
-        this.ele = ele;
-        this.ele.innerHTML = "<h1>It's Alive!!</h1>"
-        this.ele.addEventListener("click", this.handleClick.bind(this))
+    constructor(idName){
+        this.idName = idName;
+        this.idName.innerHTML = "<button class='main-clicker'>Click Me</button>"
+        this.idName.addEventListener("click", this.handleClick.bind(this))
     }
 
     handleClick(){
