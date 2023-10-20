@@ -1,6 +1,7 @@
 class ShopContent{
-    constructor(){
+    constructor(headerContent){
         this.shop = document.querySelector("#main-shop")
+        this.headerContent = headerContent
         this.renderTitle()
         this.renderShopItems(15)
     }
@@ -16,7 +17,15 @@ class ShopContent{
         for(let i = 0; i < num; i++){
             let shopItem = document.createElement("div")
             shopItem.setAttribute("class","shop-item")
+
+
+            let shopItemPrice = document.createElement("p")
+            shopItemPrice.innerText = "$100"
+            
+            shopItem.appendChild(shopItemPrice)
             this.shop.appendChild(shopItem)
+
+            shopItem.addEventListener("click", this.headerContent.resetTotal.bind(this.headerContent))
         }
     }
 }
