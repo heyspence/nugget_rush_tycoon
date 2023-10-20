@@ -1,16 +1,26 @@
 class HeaderContent {
     constructor(){
-        this.cashOnHand = 0
-
         this.renderLogo()
         this.renderTotal()
         this.renderMenu()
+        if(localStorage.getItem("cashOnHand") === 'NaN'){
+            localStorage.setItem("cashOnHand", 0)
+        }
+    }
+    
+    get cashOnHand(){
+        let cash = localStorage.getItem("cashOnHand")
+        return cash ? parseInt(cash) : 0
+    }
+
+    set cashOnHand(num) {
+        localStorage.setItem("cashOnHand", num.toString())
     }
 
     renderLogo(){
         const logoEle = document.querySelector("#main-title-container")
         const logo = document.createElement("img")
-        logo.setAttribute("src", "./assets/output-onlinepngtools (3).png")
+        logo.setAttribute("src", "./assets/output-onlinepngtools (2).png")
         logoEle.appendChild(logo)
     }
 
