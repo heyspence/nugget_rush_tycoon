@@ -24,11 +24,6 @@ class HeaderContent {
         logoEle.appendChild(logo)
     }
 
-    countClicks(){
-        this.cashOnHand++;
-        this.renderTotal();
-    }
-
     renderTotal() {
         const totalEle = document.querySelector("#main-total");
         totalEle.innerHTML = `<h2>Total: $${this.cashOnHand}</h2>`;
@@ -37,6 +32,15 @@ class HeaderContent {
     renderMenu() {
         const menuEle = document.querySelector("#main-menu");
         menuEle.innerHTML = '<h2>Menu</h2>'
+    }
+
+    subtractFromTotal(num){
+        if(this.cashOnHand >= num){
+            this.cashOnHand -= num
+            this.renderTotal()
+        }else{
+            console.log("insufficientfunds")
+        }
     }
 
     resetTotal(){
