@@ -12,15 +12,26 @@ window.addEventListener("load", () => {
     const background = new Background(ctx)
     
     const headerContent = new HeaderContent()
-    canvas.addEventListener("click", headerContent.countClicks.bind(headerContent))
-
+    
     const shopContent = new ShopContent(headerContent)
-
-    const clickableObjectOptions = {
-        color: "red",
-        pos: [200, 300],
-        size: [100, 100]
+    
+    const mainCharacterOptions = {
+        pos: [180, 180],
+        size: [150, 200],
+        img: "assets/main-transparent.png"
     }
-    const clickableObject = new ClickableObject(ctx, clickableObjectOptions)
+
+    const mainCharacter = new ClickableObject(ctx, mainCharacterOptions, headerContent)
+    canvas.addEventListener("click", (event) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+    
+        event.canvasX = x;
+        event.canvasY = y;
+    
+        mainCharacter.clickHandler(event);
+    });
+    
 })
     

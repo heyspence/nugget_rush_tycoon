@@ -1,3 +1,5 @@
+import itemData from './store-items.json';
+
 class ShopContent{
     constructor(headerContent){
         this.shop = document.querySelector("#main-shop")
@@ -14,16 +16,8 @@ class ShopContent{
         this.shop.appendChild(titleItem)
     }
 
-    async getShopItems(){
-        const response = await fetch('../store-items.json')
-        const data = await response.json();
-        return data["shop-items"]
-    }
-
-    async renderShopItems(){
-        const items = await this.getShopItems()
-
-        items.forEach(item => {
+    renderShopItems(){
+        itemData["store-items"].forEach(item => {
             let shopItem = document.createElement("div")
             shopItem.setAttribute("class","shop-item")
             shopItem.setAttribute("name", item.name)
@@ -34,7 +28,7 @@ class ShopContent{
             shopItem.appendChild(shopItemPrice)
             this.shop.appendChild(shopItem)
 
-            shopItem.addEventListener("click", this.headerContent.resetTotal.bind(this.headerContent))
+            shopItem.addEventListener("click", ()=>{this.headerContent.subtractFromTotal(`${item.price}`)})
         })
     }
 
