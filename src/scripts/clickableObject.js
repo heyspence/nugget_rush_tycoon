@@ -38,13 +38,14 @@ class ClickableObject{
         const withinY = (event.canvasY >= yCoordinates[0] && event.canvasY <= yCoordinates[1])
         
         if(withinX && withinY){
-            this.headerContent.cashOnHand++;
-            this.headerContent.renderTotal();
-            new ProgressBar(this.ctx, this.pos)
+            new ProgressBar(this.ctx, this.pos, this)
         }
     }
-}
 
-window.ClickableObject = ClickableObject;
+    addToTotal(num){
+        this.headerContent.cashOnHand = this.headerContent.cashOnHand + num;
+        this.headerContent.renderTotal();
+    }
+}
 
 export default ClickableObject;

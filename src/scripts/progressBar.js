@@ -1,17 +1,56 @@
-import ClickableObject from "./clickableObject";
-
 class ProgressBar{
-    constructor(ctx, pos){
-        this.ctx = ctx
-        this.pos = [pos[0] + 20, pos[1] - 30]
-        this.size = [140, 15]
+    constructor(ctx, pos, clickableObject){
+        this.ctx = ctx;
+        this.pos = [pos[0] + 20, pos[1] - 30];
+        this.size = [140, 15];
+        this.loadTime = 10000;
+        this.currentWidth = 0;
+        this.startTime = null;
+        this.clickableObject = clickableObject;
+        this.complete = false;
 
-        this.draw()
+        this.drawLoadBackground();
+        // this.update();
+        this.animate();
     }
 
-    draw(){
-        this.ctx.fillStyle = "blue"
-        this.ctx.fillRect(...this.pos, ...this.size)
+    animate = ()=> {
+        if(this.complete){
+            return;
+        }
+
+        if(this.currentWidth >= this.size[0]){
+            this.ctx.clearRect(...this.pos, ...this.size);
+            this.drawLoadBackground();
+            this.clickableObject.addToTotal(1);
+            this.complete = true
+            return;
+        }
+        
+        this.currentWidth += 0.5
+        this.update()
+
+
+        requestAnimationFrame(this.animate);
+    }
+    
+    update(){
+        this.ctx.fillStyle = "red";
+        this.ctx.fillRect(...this.pos, this.currentWidth, this.size[1]);
+    }
+
+    isComplete(){
+        return this.currentWidth >= this.size[0];
+    }
+
+    reset(){
+        this.currentWidth = 0;
+        this.startTime = 0;
+    }
+
+    drawLoadBackground(){
+        this.ctx.fillStyle = "blue";
+        this.ctx.fillRect(...this.pos, ...this.size);
     }
 }
 
