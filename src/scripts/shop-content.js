@@ -1,9 +1,10 @@
 import itemData from './store-items.json';
 
 class ShopContent{
-    constructor(headerContent){
+    constructor(headerContent, mainCharacter){
         this.shop = document.querySelector("#main-shop")
         this.headerContent = headerContent
+        this.mainCharacter = mainCharacter
         this.renderTitle()
         this.renderShopItems()
         this.renderStats()
@@ -32,13 +33,25 @@ class ShopContent{
             shopItem.appendChild(shopItemPrice)
             this.shop.appendChild(shopItem)
 
-            shopItem.addEventListener("click", ()=>{this.headerContent.subtractFromTotal(`${item.price}`)})
+            shopItem.addEventListener("click", ()=>{
+                if(this.headerContent.subtractFromTotal(`${item.price}`)){
+                    if(item.method && item.action){
+                        this[item.method][item.action](...item.args)
+                    }
+                }
+            })
         })
     }
 
     renderStats(){
         let statsItem = document.createElement("div")
         statsItem.setAttribute("id", "main-stats")
+
+        let statsHeader = document.createElement("h2")
+        statsHeader.setAttribute("style", "text-decoration: underline; font-size: 20px; margin: 5px 0px 5px 20px;")
+        statsHeader.innerText = "Current Stats"
+
+        statsItem.appendChild(statsHeader)
         this.shop.appendChild(statsItem)
     }
 }

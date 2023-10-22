@@ -1,41 +1,45 @@
 class ProgressBar{
     constructor(ctx, pos, clickableObject){
         this.ctx = ctx;
-        this.pos = [pos[0] + 20, pos[1] - 30];
+        this.pos = [pos[0] - 30, pos[1] - 40];
         this.size = [140, 15];
         this.loadTime = 10000;
         this.currentWidth = 0;
-        this.startTime = null;
         this.clickableObject = clickableObject;
         this.complete = false;
+        this.animating = false;
 
-        this.drawLoadBackground();
-        this.animate();
+        this.drawBackground();
     }
 
     animate = ()=> {
-        if(this.complete){
-            return;
+        if(this.animating)return;
+
+        const internalAnimate = () => {
+            if(this.complete){
+                this.reset()
+                return;
+            }
+
+            if(this.currentWidth >= this.size[0]){
+                this.ctx.clearRect(...this.pos, ...this.size);
+                this.clickableObject.addToTotal(1);
+                this.complete = true
+            }
+
+            this.animating = true
+            this.currentWidth += 1
+            this.update()
+
+            requestAnimationFrame(internalAnimate);
         }
 
-        if(this.currentWidth >= this.size[0]){
-            this.ctx.clearRect(...this.pos, ...this.size);
-            this.drawLoadBackground();
-            this.clickableObject.addToTotal(1);
-            this.complete = true
-            return;
-        }
-
-        this.currentWidth += 0.5
-        this.update()
-
-
-        requestAnimationFrame(this.animate);
+        internalAnimate();
     }
     
-    update(color){
-        this.ctx.fillStyle = "red";
-        this.ctx.fillRect(...this.pos, this.currentWidth, this.size[1]);
+    update(){
+        this.ctx.fillStyle = "rgb(253 214 67)";
+        this.ctx.fillRect(this.pos[0] + 2, this.pos[1] + 3, this.currentWidth, this.size[1]);
     }
 
     isComplete(){
@@ -43,13 +47,16 @@ class ProgressBar{
     }
 
     reset(){
+        this.drawBackground()
         this.currentWidth = 0;
-        this.startTime = 0;
+        this.update()
+        this.animating = false;
+        this.complete = false;
     }
 
-    drawLoadBackground(){
+    drawBackground(){
         this.ctx.fillStyle = "black";
-        this.ctx.fillRect(...this.pos, ...this.size);
+        this.ctx.fillRect(this.pos[0] - 2, this.pos[1], this.size[0] + 6, this.size[1] + 6);
     }
 }
 

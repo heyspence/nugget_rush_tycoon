@@ -13,25 +13,24 @@ window.addEventListener("load", () => {
     
     const headerContent = new HeaderContent()
     
-    const shopContent = new ShopContent(headerContent)
-    
     const mainCharacterOptions = {
-        pos: [180, 180],
-        size: [150, 200],
-        img: "assets/main-transparent.png"
+        pos: [200, 200],
+        size: [75, 125],
+        img: "assets/Cowboy4_idle without gun_2 copy.png"
     }
-
+    
     const mainCharacter = new ClickableObject(ctx, mainCharacterOptions, headerContent)
     canvas.addEventListener("click", (event) => {
         const rect = canvas.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
-    
+        
         event.canvasX = x;
         event.canvasY = y;
-    
+        
         mainCharacter.clickHandler(event);
     });
     
+    const shopContent = new ShopContent(headerContent, mainCharacter)
 })
     
