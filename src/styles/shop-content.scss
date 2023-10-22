@@ -16,6 +16,7 @@
     border-radius: 4px;
     user-select: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -32,9 +33,9 @@
     border: 2px solid rgb(85, 146, 141);
 }
 
- .shop-item p{
+.shop-item p {
     font-family: 'Luckiest Guy';
     font-size: 15px;
     color: rgb(38 22 23);
-    margin-top: 55px;
+    margin-top: 5px;
 }

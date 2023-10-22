@@ -1,49 +1,49 @@
 {
     "store-items":[
         {
-            "name": "Medicine",
+            "name": "Pistol",
             "price": "10",
-            "imgSrc": ""
+            "imgSrc": "assets/pistol.png"
         },
         {
-            "name": "Pistol",
+            "name": "Medicine",
             "price": "20",
-            "imgSrc": ""
+            "imgSrc": "assets/Texture/money-bag.png"
         },
         {
             "name": "Horse",
             "price": "30",
-            "imgSrc": ""
+            "imgSrc": "assets/pony.png"
         },
         {
-            "name": "Sluice Box",
+            "name": "Fire",
             "price": "50",
-            "imgSrc": ""
+            "imgSrc": "assets/Texture/fire.png"
         },
         {
-            "name": "Young Hired Hand",
+            "name": "Bucket",
             "price": "60",
-            "imgSrc": ""
+            "imgSrc": "assets/Texture/bucket.png"
         },
         {
             "name": "Experienced Hired Hand",
             "price": "70",
-            "imgSrc": ""
+            "imgSrc": "assets/output-onlinepngtools (3).png"
         },
         {
             "name": "Auto Plant",
             "price": "100",
-            "imgSrc": ""
+            "imgSrc": "assets/Texture/wheel.png"
         },
         {
-            "name": "House",
+            "name": "Pumpkin",
             "price": "1000",
-            "imgSrc": ""
+            "imgSrc": "assets/Texture/pumpkin.png"
         },
         {
-            "name": "Hotel",
+            "name": "Gold Chest",
             "price": "200000",
-            "imgSrc": ""
+            "imgSrc": "assets/Texture/gold-chest.png"
         }
     ]
 }

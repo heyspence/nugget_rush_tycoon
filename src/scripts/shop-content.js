@@ -24,7 +24,11 @@ class ShopContent{
 
             let shopItemPrice = document.createElement("p")
             shopItemPrice.innerText = `$${item.price}`
-            
+
+            let img = new Image(50, 50)
+            img.src = `${item.imgSrc}`
+
+            shopItem.appendChild(img)
             shopItem.appendChild(shopItemPrice)
             this.shop.appendChild(shopItem)
 

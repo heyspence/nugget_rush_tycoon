@@ -10,7 +10,6 @@ class ProgressBar{
         this.complete = false;
 
         this.drawLoadBackground();
-        // this.update();
         this.animate();
     }
 
@@ -26,7 +25,7 @@ class ProgressBar{
             this.complete = true
             return;
         }
-        
+
         this.currentWidth += 0.5
         this.update()
 
@@ -34,7 +33,7 @@ class ProgressBar{
         requestAnimationFrame(this.animate);
     }
     
-    update(){
+    update(color){
         this.ctx.fillStyle = "red";
         this.ctx.fillRect(...this.pos, this.currentWidth, this.size[1]);
     }
@@ -49,7 +48,7 @@ class ProgressBar{
     }
 
     drawLoadBackground(){
-        this.ctx.fillStyle = "blue";
+        this.ctx.fillStyle = "black";
         this.ctx.fillRect(...this.pos, ...this.size);
     }
 }
