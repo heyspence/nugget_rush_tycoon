@@ -36,10 +36,12 @@ class HeaderContent {
 
     subtractFromTotal(num){
         if(this.cashOnHand >= num){
-            this.cashOnHand -= num
-            this.renderTotal()
+            this.cashOnHand -= num;
+            this.renderTotal();
+            return true;
         }else{
             console.log("insufficientfunds")
+            return false;
         }
     }
 

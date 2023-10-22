@@ -18,17 +18,23 @@
         {
             "name": "Fire",
             "price": "50",
-            "imgSrc": "assets/Texture/fire.png"
+            "imgSrc": "assets/Texture/fire.png",
+            "method": "",
+            "action": "",
+            "args": ""
         },
         {
-            "name": "Bucket",
+            "name": "level 1 chest",
             "price": "60",
-            "imgSrc": "assets/Texture/bucket.png"
+            "imgSrc": "assets/Texture/chest-level-1.png"
         },
         {
             "name": "Experienced Hired Hand",
             "price": "70",
-            "imgSrc": "assets/output-onlinepngtools (3).png"
+            "imgSrc": "assets/output-onlinepngtools (3).png",
+            "method": "mainCharacter",
+            "action": "autoClick",
+            "args": []
         },
         {
             "name": "Auto Plant",
@@ -36,14 +42,17 @@
             "imgSrc": "assets/Texture/wheel.png"
         },
         {
-            "name": "Pumpkin",
+            "name": "Gold Chest",
             "price": "1000",
-            "imgSrc": "assets/Texture/pumpkin.png"
+            "imgSrc": "assets/Texture/gold-chest.png"
         },
         {
-            "name": "Gold Chest",
-            "price": "200000",
-            "imgSrc": "assets/Texture/gold-chest.png"
+            "name": "Crown",
+            "price": "1000000",
+            "imgSrc": "assets/crown.png",
+            "method": "mainCharacter",
+            "action" : "displayVictoryCrown",
+            "args": ["assets/crown.png"]
         }
     ]
 }
