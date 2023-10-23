@@ -1,0 +1,77 @@
+{
+    "store-items":[
+        {
+            "name": "pistol",
+            "price": "10",
+            "imgSrc": "assets/pistol.png"
+        },
+        {
+            "name": "medicine",
+            "price": "20",
+            "imgSrc": "assets/Texture/money-bag.png"
+        },
+        {
+            "name": "horse",
+            "price": "30",
+            "imgSrc": "assets/pony.png"
+        },
+        {
+            "name": "fire",
+            "price": "100",
+            "imgSrc": "assets/Texture/fire.png",
+            "class":"StaticObject",
+            "args": { "pos": [380, 290],
+                "size": [110, 110],
+                "img": "assets/Texture/fire.png",
+                "ability": "increaseSpeed"
+            },
+            "newInstance": true
+        },
+        {
+            "name": "level-1-chest",
+            "price": "60",
+            "imgSrc": "assets/Texture/chest-level-1.png",
+            "class":"StaticObject",
+            "args": { "pos": [110, 300],
+                "size": [75, 75],
+                "img": "assets/Texture/chest-level-1.png",
+                "ability": "increaseMaxStorage"
+            },
+            "newInstance": true
+        },
+        {
+            "name": "experienced-hired-hand",
+            "price": "1000",
+            "imgSrc": "assets/output-onlinepngtools (3).png",
+            "method": "mainCharacter",
+            "action": "autoClick",
+            "args": []
+        },
+        {
+            "name": "auto-plant",
+            "price": "100",
+            "imgSrc": "assets/Texture/wheel.png"
+        },
+        {
+            "name": "house",
+            "price": "10000",
+            "imgSrc": "assets/Wild West Props 16x16 (v1.5)/Building's/house copy.png",
+            "class":"StaticObject",
+            "args": { "pos": [400, 48],
+                "size": [224, 160],
+                "idleImg": "assets/Wild West Props 16x16 (v1.5)/Building's/house.png",
+                "img": "assets/Wild West Props 16x16 (v1.5)/Building's/house.png",
+                "ability":"increaseMaxStorage"
+            },
+            "newInstance": true
+        },
+        {
+            "name": "crown",
+            "price": "100000",
+            "imgSrc": "assets/crown.png",
+            "method": "mainCharacter",
+            "action" : "displayVictoryCrown",
+            "args": ["assets/crown.png"]
+        }
+    ]
+}
