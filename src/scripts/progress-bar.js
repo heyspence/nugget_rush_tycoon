@@ -30,7 +30,7 @@ class ProgressBar{
             return;
         }
         if(currentCash >= currentMax){
-            console.log("storage insuficient");
+            console.log("storage insufficient");
             return;
         }
         
@@ -54,7 +54,12 @@ class ProgressBar{
             }
 
             this.animating = true;
-            this.currentWidth += this.loadSpeed;
+
+            if((this.currentWidth + this.loadSpeed) > this.size[0]){
+                this.currentWidth = this.size[0]
+            }else{
+                this.currentWidth += this.loadSpeed;
+            }
             this.update()
 
             requestAnimationFrame(internalAnimate);
@@ -69,7 +74,7 @@ class ProgressBar{
     }
 
     clear(){
-        this.ctx.clearRect(this.pos[0] - 2, this.pos[1], this.size[0] + 6, this.size[1] + 6)
+        this.ctx.clearRect(this.pos[0] - 2, this.pos[1], this.size[0] + 8, this.size[1] + 6)
     }
 
     isComplete(){
@@ -84,9 +89,11 @@ class ProgressBar{
     }
 
     renderReward(num){
-        this.ctx.fillStyle = "rgb(38, 22, 23)";
-        this.ctx.font = "38px Luckiest Guy";
+        this.ctx.fillStyle = "rgb(253 214 67)";
+        this.ctx.strokeStyle = "rgb(178 98 18)";
+        this.ctx.font = "42px Luckiest Guy";
         this.ctx.fillText(`+$${num}`, this.pos[0] + 120, this.pos[1] + 220);
+        this.ctx.strokeText(`+$${num}`, this.pos[0] + 120, this.pos[1] + 220);
 
         let textMetrix = this.ctx.measureText(`+$${num}`);
         let textWidth = textMetrix.width;
@@ -96,7 +103,7 @@ class ProgressBar{
 
     drawBackground(){
         this.ctx.fillStyle = "rgb(38 22 23)";
-        this.ctx.fillRect(this.pos[0] - 2, this.pos[1], this.size[0] + 6, this.size[1] + 6);
+        this.ctx.fillRect(this.pos[0] - 2, this.pos[1], this.size[0] + 8, this.size[1] + 6);
     }
 }
 
