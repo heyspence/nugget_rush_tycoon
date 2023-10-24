@@ -34,10 +34,6 @@
     color: rgb(38, 22, 23);
 }
 
-// li:nth-child(1){
-//     color: green;
-// }
-
 .overlay{
     position: fixed;
     top: 0;
@@ -64,13 +60,20 @@
 
 #reset{
     background-color: red;
-    // border: 2px outset rgba(0, 0, 0, 0.5);
     right: 30px;
 }
 
 #demo{
     background-color: yellow;
     right: 150px;
+}
+
+.modal a{
+    position: absolute;
+    left: 80px;
+    bottom: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 23px;
 }
 
 #reset:hover{

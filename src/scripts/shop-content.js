@@ -1,6 +1,7 @@
 import itemData from './store-items.json';
 import StaticObject from './static-object';
 import ClickableObject from './clickable-object';
+import Clover from './clover';
 
 class ShopContent{
     constructor(headerContent, mainCharacter){
@@ -8,7 +9,7 @@ class ShopContent{
         this.headerContent = headerContent
         this.mainCharacter = mainCharacter
         this.ctx = mainCharacter.ctx
-        
+    
         if(!localStorage.getItem("maxGold")){
             localStorage.setItem("maxGold", 1000)
         }
@@ -22,9 +23,15 @@ class ShopContent{
         let gold = localStorage.getItem("maxGold");
         return parseInt(gold);
     }
-    
     set maxGold(num){
         localStorage.setItem("maxGold", num.toString());
+    }
+    get maxNugget(){
+        let max = localStorage.getItem("maxLoot");
+        return parseInt(max);
+    }
+    set maxNugget(num){
+        localStorage.setItem("maxLoot", num.toString());
     }
     
     static updateStats(){
@@ -33,6 +40,9 @@ class ShopContent{
     
         let maxGold = document.querySelector("#max-gold")
         maxGold.innerText = `Max storage: $${currentMax}`
+
+        let maxNugget = document.querySelector("#max-nugget")
+        maxNugget.innerText = `Max possible nugget: $${parseInt(localStorage.getItem("maxLoot"))}`
     
         let bestTime = document.querySelector("#best-time")
         bestTime.innerText = `Best Time: TBD`
@@ -64,7 +74,8 @@ class ShopContent{
 
             const classMap = {
                 "StaticObject": StaticObject,
-                "ClickableObject": ClickableObject
+                "ClickableObject": ClickableObject,
+                "Clover": Clover
             }
 
             shopItem.addEventListener("click", ()=>{
@@ -89,7 +100,11 @@ class ShopContent{
 
         let maxGold = document.createElement("p")
         maxGold.setAttribute("id", "max-gold")
-        maxGold.innerText = `Max storage: $${this.maxGold}`
+        maxGold.innerText = `Max Storage: $${this.maxGold}`
+
+        let maxNugget = document.createElement("p")
+        maxNugget.setAttribute("id", "max-nugget")
+        maxNugget.innerText = `Max Nugget Size: $${this.maxNugget}`
 
         let bestTime = document.createElement("p")
         bestTime.setAttribute("id", "best-time")
@@ -97,6 +112,7 @@ class ShopContent{
 
         statsItem.appendChild(statsHeader)
         statsItem.appendChild(maxGold)
+        statsItem.appendChild(maxNugget)
         statsItem.appendChild(bestTime)
         this.shop.appendChild(statsItem)
     }
