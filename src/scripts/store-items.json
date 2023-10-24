@@ -6,23 +6,30 @@
             "imgSrc": "assets/pistol.png"
         },
         {
-            "name": "money-bag",
-            "price": "20",
-            "imgSrc": "assets/Texture/money-bag.png"
-        },
-        {
             "name": "horse",
             "price": "30",
             "imgSrc": "assets/pony.png"
         },
         {
+            "name": "four-leaf-clover",
+            "price": "60",
+            "imgSrc": "assets/ORIGINALS/Item 7-1.png.png",
+            "class":"Clover",
+            "args": { "pos": [110, 230],
+                "size": [110, 110],
+                "img": "assets/ORIGINALS/Item 7-1.png.png",
+                "ability": "increaseMaxLoot"
+            },
+            "newInstance": true
+        },
+        {
             "name": "fire",
             "price": "100",
-            "imgSrc": "assets/Texture/fire.png",
+            "imgSrc": "assets/ORIGINALS/props/fire.png",
             "class":"StaticObject",
             "args": { "pos": [380, 290],
-                "size": [110, 110],
-                "img": "assets/Texture/fire.png",
+            "size": [110, 110],
+            "img": "assets/ORIGINALS/props/fire.png",
                 "ability": "increaseSpeed"
             },
             "newInstance": true
@@ -30,11 +37,11 @@
         {
             "name": "level-1-chest",
             "price": "200",
-            "imgSrc": "assets/Texture/chest-level-1.png",
+            "imgSrc": "assets/ORIGINALS/props/chest-level-1.png",
             "class":"StaticObject",
-            "args": { "pos": [110, 300],
+            "args": { "pos": [80, 280],
                 "size": [75, 75],
-                "img": "assets/Texture/chest-level-1.png",
+                "img": "assets/ORIGINALS/props/chest-level-1.png",
                 "ability": "increaseMaxStorage"
             },
             "newInstance": true
@@ -45,22 +52,35 @@
             "imgSrc": "assets/output-onlinepngtools (3).png",
             "method": "mainCharacter",
             "action": "autoClick",
-            "args": []
+            "args": { "pos": [400, 175],
+                "size": [150, 170],
+                "img1": "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_3.png",
+                "img2": "assets/finalShovel.png",
+                "idleImg": "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_1.png"
+            },
+            "newInstance": true
         },
         {
-            "name": "auto-plant",
-            "price": "100",
-            "imgSrc": "assets/Texture/wheel.png"
+            "name": "gold-chest",
+            "price": "1000",
+            "imgSrc": "assets/ORIGINALS/props/gold-chest.png",
+            "class":"StaticObject",
+            "args": { "pos": [110, 300],
+                "size": [75, 75],
+                "img": "assets/ORIGINALS/props/gold-chest.png",
+                "ability": "increaseMaxStorage"
+            },
+            "newInstance": true
         },
         {
             "name": "house",
             "price": "10000",
-            "imgSrc": "assets/Wild West Props 16x16 (v1.5)/Building's/house copy.png",
+            "imgSrc": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Building's/house copy.png",
             "class":"StaticObject",
             "args": { "pos": [400, 48],
                 "size": [224, 160],
-                "idleImg": "assets/Wild West Props 16x16 (v1.5)/Building's/house.png",
-                "img": "assets/Wild West Props 16x16 (v1.5)/Building's/house.png",
+                "idleImg": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Building's/house.png",
+                "img": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Building's/house.png",
                 "ability":"increaseMaxStorage"
             },
             "newInstance": true

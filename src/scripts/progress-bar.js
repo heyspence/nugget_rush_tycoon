@@ -11,7 +11,11 @@ class ProgressBar{
 
 
         if(!localStorage.getItem("loadSpeed")){
-            localStorage.setItem("loadSpeed", 0.5)
+            localStorage.setItem("loadSpeed", 0.8)
+        }
+
+        if(!localStorage.getItem("maxLoot")){
+            localStorage.setItem("maxLoot", 10)
         }
     }
 
@@ -21,6 +25,14 @@ class ProgressBar{
 
     set loadSpeed(num){
         localStorage.setItem("loadSpeed", num)
+    }
+
+    get maxLoot(){
+        return parseFloat(localStorage.getItem("maxLoot"))
+    }
+
+    set maxLoot(num){
+        localStorage.setItem("maxLoot", num)
     }
 
     animate = ()=> {
@@ -45,7 +57,7 @@ class ProgressBar{
             this.clickableObject.animate()
 
             if(this.currentWidth >= this.size[0]){
-                let reward = Math.floor(Math.random() * 100)
+                let reward = Math.floor(Math.random() * this.maxLoot)
                 this.ctx.clearRect(...this.pos, ...this.size);
                 this.clickableObject.addToTotal(reward);
                 this.complete = true;
@@ -92,13 +104,13 @@ class ProgressBar{
         this.ctx.fillStyle = "rgb(253 214 67)";
         this.ctx.strokeStyle = "rgb(178 98 18)";
         this.ctx.font = "42px Luckiest Guy";
-        this.ctx.fillText(`+$${num}`, this.pos[0] + 120, this.pos[1] + 220);
-        this.ctx.strokeText(`+$${num}`, this.pos[0] + 120, this.pos[1] + 220);
+        this.ctx.fillText(`+$${num}`, this.pos[0] + 165, this.pos[1] + 150);
+        this.ctx.strokeText(`+$${num}`, this.pos[0] + 165, this.pos[1] + 150);
 
         let textMetrix = this.ctx.measureText(`+$${num}`);
         let textWidth = textMetrix.width;
 
-        setTimeout( ()=> this.ctx.clearRect(this.pos[0] + 120, this.pos[1] + 186, textWidth, 38), 1000);
+        setTimeout( ()=> this.ctx.clearRect(this.pos[0] + 165, this.pos[1] + 114, textWidth, 38), 1000);
     }
 
     drawBackground(){

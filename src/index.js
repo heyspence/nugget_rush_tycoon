@@ -6,7 +6,6 @@ import MainCharacter from "./scripts/main-character";
 import Menu from "./scripts/menu";
 
 window.addEventListener("load", () => {
-    console.log('content has been loaded');
 
     const canvas = document.getElementById("canvas");
     const canvas2 = document.getElementById("canvas2");
