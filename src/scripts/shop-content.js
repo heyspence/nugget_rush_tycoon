@@ -2,6 +2,7 @@ import itemData from './store-items.json';
 import StaticObject from './static-object';
 import ClickableObject from './clickable-object';
 import Clover from './clover';
+import MainCharacter from './main-character';
 
 class ShopContent{
     constructor(headerContent, mainCharacter){
@@ -75,14 +76,19 @@ class ShopContent{
             const classMap = {
                 "StaticObject": StaticObject,
                 "ClickableObject": ClickableObject,
-                "Clover": Clover
+                "Clover": Clover,
+                "MainCharacter": MainCharacter
             }
 
             shopItem.addEventListener("click", ()=>{
                 if(this.headerContent.subtractFromTotal(`${item.price}`)){
                     if(item.newInstance){
                         let newClass = classMap[item.class]
-                        new newClass(this.ctx, item.args, this.headerContent)
+                        let newChar = new newClass(this.ctx, item.args, this.headerContent)
+
+                        if(item.action){
+                            newChar[item.action]()
+                        }
                     }else if(item.method){
                         this[item.method][item.action](...item.args)
                     }
