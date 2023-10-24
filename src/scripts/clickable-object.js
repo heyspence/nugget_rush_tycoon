@@ -5,18 +5,20 @@ class ClickableObject{
         this.ctx = ctx;
         this.ctx.imageSmoothingEnabled = false;
 
-        this.img1 = new Image();
-        this.img1.src = options.img1;
-        this.img2 = new Image();
-        this.img2.src = options.img2;
-        this.img3 = new Image();
-        this.img3.src = options.img3;
-        this.img4 = new Image();
-        this.img4.src = options.img4;
+        this.imgList = []
+        for(let i = 1; i < Object.keys(options).length; i++){
+            if(options['img' + i]){
+                this.imgList.push(options['img' + i]);
+            }
+        }
+
+        for(let i = 0; i < this.imgList.length; i++){
+            this['img' + (i + 1)] = this.loadImg(this.imgList[i])
+        }
+
         this.counter = 0;
-        this.idleImg = new Image();
-        this.idleImg.src = options.idleImg;
-        this.currentImg = this.img1;
+        this.idleImg = this.loadImg(options.idleImg);
+        this.currentImg = this.imgList[0];
         this.toggleInterval = null;
 
         this.size = options.size;
@@ -27,18 +29,19 @@ class ClickableObject{
 
         const progressBar = new ProgressBar(this.ctx, this.pos, this)
         this.progressBar = progressBar
-
-        this.renderIdle()
+        
         this.idleImg.onload = () => {
             this.ctx.clearRect(...this.pos, ...this.size);
             this.ctx.drawImage(this.idleImg, ...this.pos, ...this.size)
         }
+        
+        this.renderIdle()
 
         if(!localStorage.getItem("animationSpeed")){
             localStorage.setItem("animationSpeed", 450)
         }
     }
-
+    
     get animationSpeed(){
         return parseInt(localStorage.getItem("animationSpeed"));
     }
@@ -46,14 +49,28 @@ class ClickableObject{
     set animationSpeed(num){
         localStorage.setItem("animationSpeed", num)
     }
+    
+    loadImg(src){
+        let img = new Image();
+        img.src = src;
+        return img;
+    }
 
     renderIdle(){
         this.ctx.clearRect(...this.pos, ...this.size);
         this.ctx.drawImage(this.idleImg, ...this.pos, ...this.size)
     }
 
+    animate(){
+        if(this.toggleInterval) return;
+        
+        this.toggleInterval = setInterval(() => {
+            this.toggleImages();
+        }, this.animationSpeed)
+    }
+    
     toggleImages(){
-        let images = [this.img3, this.img4]
+        let images = [this.img1, this.img2]
         if(this.counter === images.length - 1){
             this.counter = 0
         }else{
@@ -63,18 +80,11 @@ class ClickableObject{
         this.ctx.drawImage(images[this.counter], ...this.pos, ...this.size)
     }
 
-    animate(){
-        if(this.toggleInterval) return;
-
-        this.toggleInterval = setInterval(() => {
-            this.toggleImages();
-        }, this.animationSpeed)
-    }
-
     stopAnimation(){
         if(this.toggleInterval){
             clearInterval(this.toggleInterval);
             this.toggleInterval = null;
+            this.currentImg = this.img4
             this.renderIdle();
         }
     }
@@ -97,19 +107,6 @@ class ClickableObject{
 
     autoClick(){
         setInterval(this.progressBar.animate, 450)
-    }
-
-    displayVictoryCrown(imgUri){
-        const img = new Image();
-
-        img.onload = () => {
-            this.ctx.save(); 
-            this.ctx.scale(...this.scale);
-            this.ctx.drawImage(img, this.pos[0] - 10, this.pos[1] + 10, 110, 110); 
-            this.ctx.restore(); 
-        }
-    
-        img.src = imgUri;
     }
 }
 

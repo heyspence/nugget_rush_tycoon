@@ -6,7 +6,7 @@
             "imgSrc": "assets/pistol.png"
         },
         {
-            "name": "medicine",
+            "name": "money-bag",
             "price": "20",
             "imgSrc": "assets/Texture/money-bag.png"
         },
@@ -29,7 +29,7 @@
         },
         {
             "name": "level-1-chest",
-            "price": "60",
+            "price": "200",
             "imgSrc": "assets/Texture/chest-level-1.png",
             "class":"StaticObject",
             "args": { "pos": [110, 300],

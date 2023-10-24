@@ -11,6 +11,10 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
     <title>Nugget Rush Tycoon</title>
   </head>
 
@@ -19,7 +23,7 @@
       <div id="header-container">
         <div class="main-page" id="main-header">
           <div id="main-total"></div>
-          <div id="main-menu"></div>
+          <div class="btn" id="main-menu"></div>
         </div>
         <div id="main-title-container">
         </div>
@@ -36,5 +40,20 @@
     </div>
     <img id="main-background-img" style="display: none" src="assets/DALL·E 2023-10-18 16.49.37 - Illustration of a broad desert scene with a central river, occasional tumbleweeds, and sparse vegetation. The horizon is marked by distant mountain si.png">
   </body>
+
+  <section class="modal hidden">
+      <button class="btn-close">x</button>
+      <div id="modal-text">
+        <h1>Instructions</h1>
+        <ol>
+          <li>1. Start mining for gold by clicking on Lucky Luke.</li>
+          <li>2. Purchase items from the shop to make money faster.</li>
+          <li>3. Win the game by purchasing the golden crown</li>
+        </ol>
+      </div>
+      <button id="demo">Demo Game</button>
+      <button id="reset">Reset Game</button>
+  </section>
+  <div class="overlay hidden"></div>
 
 </html>

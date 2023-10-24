@@ -1,6 +1,7 @@
 @import './styles/reset.scss';
 @import './styles/clickable-object.scss';
 @import './styles/shop-content.scss';
+@import './styles/modal.scss';
 
 h1 {
     font-family: 'Luckiest Guy';
@@ -70,7 +71,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 5;
     user-select: none;
 }
 
@@ -106,4 +107,8 @@ p {
     left: 0;
     margin-top: 2px;
     margin-left: 2px;  
+}
+
+.btn {
+    cursor: pointer;
 }

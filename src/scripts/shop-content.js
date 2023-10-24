@@ -50,6 +50,7 @@ class ShopContent{
             let shopItem = document.createElement("div")
             shopItem.setAttribute("class","shop-item")
             shopItem.setAttribute("id", item.name)
+            shopItem.classList.add("btn")
 
             let shopItemPrice = document.createElement("p")
             shopItemPrice.innerText = `$${item.price}`
@@ -69,7 +70,6 @@ class ShopContent{
             shopItem.addEventListener("click", ()=>{
                 if(this.headerContent.subtractFromTotal(`${item.price}`)){
                     if(item.newInstance){
-                        debugger
                         let newClass = classMap[item.class]
                         new newClass(this.ctx, item.args, this.headerContent)
                     }else if(item.method){
