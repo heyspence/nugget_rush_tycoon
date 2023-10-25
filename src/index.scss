@@ -97,6 +97,10 @@ p {
     align-items: start;
 }
 
+#tnt img{
+    image-rendering: pixelated;
+}
+
 #canvas-container {
     position: relative;
     margin: 10px 5px 20px 20px;

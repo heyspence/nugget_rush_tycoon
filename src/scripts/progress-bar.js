@@ -110,7 +110,8 @@ class ProgressBar{
         let textMetrix = this.ctx.measureText(`+$${num}`);
         let textWidth = textMetrix.width;
 
-        setTimeout( ()=> this.ctx.clearRect(this.pos[0] + 165, this.pos[1] + 114, textWidth, 38), 1000);
+        setTimeout( ()=> this.ctx.clearRect(this.pos[0] + 165, this.pos[1] + 114, textWidth, 38), 
+            (800 / this.loadSpeed));
     }
 
     drawBackground(){

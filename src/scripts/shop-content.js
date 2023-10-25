@@ -3,6 +3,7 @@ import StaticObject from './static-object';
 import ClickableObject from './clickable-object';
 import Clover from './clover';
 import MainCharacter from './main-character';
+import Horse from './horse';
 
 class ShopContent{
     constructor(headerContent, mainCharacter){
@@ -34,6 +35,10 @@ class ShopContent{
     set maxNugget(num){
         localStorage.setItem("maxLoot", num.toString());
     }
+
+    get digSpeed(){
+        return localStorage.getItem("loadSpeed") ? Math.round(parseFloat(localStorage.getItem("loadSpeed")) * 10) : 0.5 ;
+    }
     
     static updateStats(){
         let currentMax = localStorage.getItem("maxGold");
@@ -45,8 +50,8 @@ class ShopContent{
         let maxNugget = document.querySelector("#max-nugget")
         maxNugget.innerText = `Max possible nugget: $${parseInt(localStorage.getItem("maxLoot"))}`
     
-        let bestTime = document.querySelector("#best-time")
-        bestTime.innerText = `Best Time: TBD`
+        let digSpeed = document.querySelector("#dig-speed")
+        digSpeed.innerText = `Dig Speed: ${Math.round(parseFloat(localStorage.getItem("loadSpeed")) * 10)}`
     }
 
     renderTitle(){
@@ -77,7 +82,8 @@ class ShopContent{
                 "StaticObject": StaticObject,
                 "ClickableObject": ClickableObject,
                 "Clover": Clover,
-                "MainCharacter": MainCharacter
+                "MainCharacter": MainCharacter,
+                "Horse": Horse
             }
 
             shopItem.addEventListener("click", ()=>{
@@ -112,14 +118,14 @@ class ShopContent{
         maxNugget.setAttribute("id", "max-nugget")
         maxNugget.innerText = `Max Nugget Size: $${this.maxNugget}`
 
-        let bestTime = document.createElement("p")
-        bestTime.setAttribute("id", "best-time")
-        bestTime.innerText = `Best Time: TBD`
+        let digSpeed = document.createElement("p")
+        digSpeed.setAttribute("id", "dig-speed")
+        digSpeed.innerText = `Dig Speed: ${this.digSpeed}`
 
         statsItem.appendChild(statsHeader)
         statsItem.appendChild(maxGold)
         statsItem.appendChild(maxNugget)
-        statsItem.appendChild(bestTime)
+        statsItem.appendChild(digSpeed)
         this.shop.appendChild(statsItem)
     }
 }

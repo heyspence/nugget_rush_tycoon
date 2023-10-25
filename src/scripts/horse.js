@@ -1,16 +1,18 @@
 import StaticObject from "./static-object";
 import ShopContent from "./shop-content";
 
-class Clover extends StaticObject{
+class Horse extends StaticObject{
     constructor(ctx, options){
         super(ctx, options)
         this.pos = [...options.pos]
     }
 
-    increaseMaxLoot(){
-        let currentMax = parseInt(localStorage.getItem("maxLoot"))
-        localStorage.setItem("maxLoot", currentMax + 5);
-        console.log(`${currentMax}`);
+    increaseSpeed(){
+        let currentLoadSpeed = parseFloat(localStorage.getItem("loadSpeed"))
+        localStorage.setItem("loadSpeed", currentLoadSpeed + 0.35)
+
+        let currentAnimationSpeed = parseInt(localStorage.getItem("animationSpeed"))
+        localStorage.setItem("animationSpeed", currentAnimationSpeed - 50)
 
         ShopContent.updateStats();
 
@@ -43,13 +45,12 @@ class Clover extends StaticObject{
             cancelAnimationFrame(this.animationFrameId);
             this.animationFrameId = null;
             this.clear.bind(this)();
-            // this.pos[1] = this.originalPosY;
         }
     }
 
     clear(){
-        this.ctx.clearRect(this.pos[0] + 40, this.pos[1] + 40, 30, 40)
+        this.ctx.clearRect(...this.pos, this.size[0], this.size[1] + 5)
     }
 }
 
-export default Clover
+export default Horse
