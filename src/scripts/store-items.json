@@ -1,18 +1,13 @@
 {
     "store-items":[
         {
-            "name": "pistol",
+            "name": "tnt",
             "price": "10",
-            "imgSrc": "assets/pistol.png"
-        },
-        {
-            "name": "horse",
-            "price": "30",
-            "imgSrc": "assets/pony.png"
+            "imgSrc": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Tools/tnt-big.png"
         },
         {
             "name": "four-leaf-clover",
-            "price": "60",
+            "price": "20",
             "imgSrc": "assets/ORIGINALS/Item 7-1.png.png",
             "class":"Clover",
             "args": { "pos": [110, 230],
@@ -23,25 +18,49 @@
             "newInstance": true
         },
         {
-            "name": "fire",
-            "price": "100",
-            "imgSrc": "assets/ORIGINALS/props/fire.png",
-            "class":"StaticObject",
-            "args": { "pos": [380, 290],
-            "size": [110, 110],
-            "img": "assets/ORIGINALS/props/fire.png",
+            "name": "horse",
+            "price": "80",
+            "imgSrc": "assets/pony.png",
+            "class":"Horse",
+            "args": { "pos": [145, 250],
+            "size": [40, 40],
+            "img": "assets/pony.png",
                 "ability": "increaseSpeed"
             },
             "newInstance": true
         },
         {
-            "name": "level-1-chest",
-            "price": "200",
-            "imgSrc": "assets/ORIGINALS/props/chest-level-1.png",
-            "class":"StaticObject",
-            "args": { "pos": [80, 280],
+                "name": "level-2-chest",
+                "price": "200",
+                "imgSrc": "assets/ORIGINALS/props/chest-level-2.png",
+                "class":"StaticObject",
+                "args": { "pos": [60, 260],
                 "size": [75, 75],
-                "img": "assets/ORIGINALS/props/chest-level-1.png",
+                "img": "assets/ORIGINALS/props/chest-level-2.png",
+                "ability": "increaseMaxStorage"
+            },
+            "newInstance": true
+        },
+        {
+                    "name": "level-1-chest",
+                    "price": "500",
+                    "imgSrc": "assets/ORIGINALS/props/chest-level-1.png",
+                    "class":"StaticObject",
+                    "args": { "pos": [80, 280],
+                    "size": [75, 75],
+                    "img": "assets/ORIGINALS/props/chest-level-1.png",
+                    "ability": "increaseMaxStorage"
+                },
+                "newInstance": true
+            },
+            {
+                "name": "gold-chest",
+                "price": "10000",
+                "imgSrc": "assets/ORIGINALS/props/gold-chest.png",
+                "class":"StaticObject",
+                "args": { "pos": [110, 300],
+                "size": [75, 75],
+                "img": "assets/ORIGINALS/props/gold-chest.png",
                 "ability": "increaseMaxStorage"
             },
             "newInstance": true
@@ -54,24 +73,12 @@
             "method":"mainCharacter",
             "action":"autoClick",
             "args": { "pos": [550, 120],
-                "size": [115, 130],
-                "img1": "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_3.png",
-                "img2": "assets/finalShovel.png",
-                "idleImg": "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_1.png"
-            },
-            "newInstance": true
+            "size": [115, 130],
+            "img1": "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_3.png",
+            "img2": "assets/finalShovel.png",
+            "idleImg": "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_1.png"
         },
-        {
-            "name": "gold-chest",
-            "price": "1000",
-            "imgSrc": "assets/ORIGINALS/props/gold-chest.png",
-            "class":"StaticObject",
-            "args": { "pos": [110, 300],
-                "size": [75, 75],
-                "img": "assets/ORIGINALS/props/gold-chest.png",
-                "ability": "increaseMaxStorage"
-            },
-            "newInstance": true
+        "newInstance": true
         },
         {
             "name": "house",
