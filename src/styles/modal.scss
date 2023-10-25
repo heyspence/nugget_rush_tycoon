@@ -5,11 +5,13 @@
 .modal{
     width: 600px;
     height: 500px;
-    position: absolute;
+    position: fixed;
     border-radius: 30px;
-    background-color: rgb(97 176 192);
-    top: 5%;
-    left: 30%;
+    background-color: #efdecd;
+    border: 25px solid rgb(97 176 192);
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 11;
     padding: 50px;
 }
@@ -52,38 +54,35 @@
     height: 40px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 20px;
     font-family: 'Oswald', sans-serif;
-    border-radius: 8px;
+    border-radius: 20px;
     position: absolute;
     bottom: 30px;
+    border: 2px outset rgb(97 176 192);
 }
 
 #reset{
-    background-color: red;
+    background-color: rgb(97 176 192);
     right: 30px;
 }
 
 #demo{
-    background-color: yellow;
+    background-color: rgb(97 176 192);
     right: 150px;
 }
 
 .modal a{
     position: relative;
     left: 10px;
-    // bottom: 50px;
     top: 100px;
     margin: 10px;
     font-family: 'Oswald', sans-serif;
     font-size: 23px;
 }
 
-#reset:hover{
-    border-color: red;
-}
-
-#demo:hover{
-    border-color: yellow;
+#reset:hover, #demo:hover{
+    border: 2px solid rgb(97 176 192);
 }
 
 .btn-close{

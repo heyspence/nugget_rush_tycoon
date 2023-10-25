@@ -3,7 +3,8 @@
         {
             "name": "tnt",
             "price": "10",
-            "imgSrc": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Tools/tnt-big.png"
+            "imgSrc": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Tools/tnt-big.png",
+            "tooltip":"N/A"
         },
         {
             "name": "four-leaf-clover",
@@ -15,7 +16,8 @@
                 "img": "assets/ORIGINALS/Item 7-1.png.png",
                 "ability": "increaseMaxLoot"
             },
-            "newInstance": true
+            "newInstance": true,
+            "tooltip":"Incease max nugget size"
         },
         {
             "name": "horse",
@@ -23,47 +25,51 @@
             "imgSrc": "assets/pony.png",
             "class":"Horse",
             "args": { "pos": [145, 250],
-            "size": [40, 40],
-            "img": "assets/pony.png",
+                "size": [40, 40],
+                "img": "assets/pony.png",
                 "ability": "increaseSpeed"
             },
-            "newInstance": true
+            "newInstance": true,
+            "tooltip":"Increase dig speed"
         },
         {
-                "name": "level-2-chest",
-                "price": "200",
-                "imgSrc": "assets/ORIGINALS/props/chest-level-2.png",
-                "class":"StaticObject",
-                "args": { "pos": [60, 260],
+            "name": "level-2-chest",
+            "price": "200",
+            "imgSrc": "assets/ORIGINALS/props/chest-level-2.png",
+            "class":"StaticObject",
+            "args": { "pos": [60, 260],
                 "size": [75, 75],
                 "img": "assets/ORIGINALS/props/chest-level-2.png",
                 "ability": "increaseMaxStorage"
             },
-            "newInstance": true
+            "newInstance": true,
+            "tooltip":"Storage level 1"
         },
         {
-                    "name": "level-1-chest",
-                    "price": "500",
-                    "imgSrc": "assets/ORIGINALS/props/chest-level-1.png",
-                    "class":"StaticObject",
-                    "args": { "pos": [80, 280],
-                    "size": [75, 75],
-                    "img": "assets/ORIGINALS/props/chest-level-1.png",
-                    "ability": "increaseMaxStorage"
-                },
-                "newInstance": true
+            "name": "level-1-chest",
+            "price": "500",
+            "imgSrc": "assets/ORIGINALS/props/chest-level-1.png",
+            "class":"StaticObject",
+            "args": { "pos": [80, 280],
+                "size": [75, 75],
+                "img": "assets/ORIGINALS/props/chest-level-1.png",
+                "ability": "increaseMaxStorage"
             },
-            {
-                "name": "gold-chest",
-                "price": "10000",
-                "imgSrc": "assets/ORIGINALS/props/gold-chest.png",
-                "class":"StaticObject",
-                "args": { "pos": [110, 300],
+            "newInstance": true,
+            "tooltip":"Storage level 2"
+        },
+        {
+            "name": "gold-chest",
+            "price": "10000",
+            "imgSrc": "assets/ORIGINALS/props/gold-chest.png",
+            "class":"StaticObject",
+            "args": { "pos": [110, 300],
                 "size": [75, 75],
                 "img": "assets/ORIGINALS/props/gold-chest.png",
                 "ability": "increaseMaxStorage"
             },
-            "newInstance": true
+            "newInstance": true,
+            "tooltip":"Storage level 3"
         },
         {
             "name": "experienced-hired-hand",
@@ -73,15 +79,16 @@
             "method":"mainCharacter",
             "action":"autoClick",
             "args": { "pos": [550, 120],
-            "size": [115, 130],
-            "img1": "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_3.png",
-            "img2": "assets/finalShovel.png",
-            "idleImg": "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_1.png"
-        },
-        "newInstance": true
+                "size": [115, 130],
+                "img1": "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_3.png",
+                "img2": "assets/finalShovel.png",
+                "idleImg": "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_1.png"
+            },
+            "newInstance": true,
+            "tooltip":"Hired hand"
         },
         {
-            "name": "house",
+            "name": "bank",
             "price": "10000",
             "imgSrc": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Building's/house copy.png",
             "class":"StaticObject",
@@ -91,7 +98,8 @@
                 "img": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Building's/house.png",
                 "ability":"increaseMaxStorage"
             },
-            "newInstance": true
+            "newInstance": true,
+            "tooltip":"Bank"
         },
         {
             "name": "crown",
@@ -99,7 +107,8 @@
             "imgSrc": "assets/crown.png",
             "method": "mainCharacter",
             "action" : "displayVictoryCrown",
-            "args": ["assets/crown.png"]
+            "args": ["assets/crown.png"],
+            "tooltip":"Crown"
         }
     ]
 }
