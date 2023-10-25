@@ -65,7 +65,9 @@ class ShopContent{
         itemData["store-items"].forEach(item => {
             let shopItem = document.createElement("div")
             shopItem.setAttribute("class","shop-item")
+            shopItem.classList.add("tooltip")
             shopItem.setAttribute("id", item.name)
+            shopItem.setAttribute("data-tooltip", item.tooltip)
             shopItem.classList.add("btn")
 
             let shopItemPrice = document.createElement("p")

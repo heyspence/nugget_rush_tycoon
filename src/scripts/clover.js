@@ -10,7 +10,6 @@ class Clover extends StaticObject{
     increaseMaxLoot(){
         let currentMax = parseInt(localStorage.getItem("maxLoot"))
         localStorage.setItem("maxLoot", currentMax + 5);
-        console.log(`${currentMax}`);
 
         ShopContent.updateStats();
 
@@ -43,7 +42,6 @@ class Clover extends StaticObject{
             cancelAnimationFrame(this.animationFrameId);
             this.animationFrameId = null;
             this.clear.bind(this)();
-            // this.pos[1] = this.originalPosY;
         }
     }
 

@@ -3,6 +3,9 @@
 @import './styles/shop-content.scss';
 @import './styles/modal.scss';
 
+body{
+    background-color: #efdecd;
+}
 h1 {
     font-family: 'Luckiest Guy';
     font-size: 40px;
@@ -32,7 +35,7 @@ p {
 #background {
     background-color: rgb(97 176 192);
     box-shadow: 5px 5px 20px 2px rgb(36 62 59);
-    border: 4px outset rgb(85 146 141);
+    border: 10px outset rgb(85 146 141);
     width: 1000px;
     height: 600px;
     border-radius: 8px;
