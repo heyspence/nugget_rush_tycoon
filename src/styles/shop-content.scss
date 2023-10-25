@@ -57,18 +57,37 @@
     content: attr(data-tooltip);
     position: absolute;
     bottom: 100%;
-    padding: 9px;
+    padding: 7px 10px;
     margin: 5px;
     font-family: "Oswald";
     white-space: nowrap; /* prevents the tooltip text from wrapping */
     background-color: rgb(36 62 59);
-    color: white;
-    border-radius: 8px;
+    color: #efdecd;
+    border-radius: 7.5px;
     z-index: 1;
     opacity: 0;
-    transition: opacity 0.1s;
+    transition: opacity 0.05s;
 }
 
 .tooltip:hover::before{
-    opacity: 1;
+    opacity: 0.9;
+}
+
+.sold-out::after{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    content: "Purchased";
+    color: white;
+    font-size: 10px;
+    font-family: "Luckiest Guy";
+    position: absolute;
+    background-color: black;
+    opacity: 0.5;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

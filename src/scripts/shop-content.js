@@ -88,18 +88,53 @@ class ShopContent{
                 "Horse": Horse
             }
 
-            shopItem.addEventListener("click", ()=>{
-                if(this.headerContent.subtractFromTotal(`${item.price}`)){
-                    if(item.newInstance){
-                        let newClass = classMap[item.class]
-                        let newChar = new newClass(this.ctx, item.args, this.headerContent)
+            shopItem.addEventListener("click", (e)=>{
+                if(item.stock !== 0){
+                    if(this.headerContent.subtractFromTotal(`${item.price}`)){
+                        if(item.newInstance){
+                            let newClass = classMap[item.class]
+                            let newChar = new newClass(this.ctx, item.args, this.headerContent)
 
-                        if(item.action){
-                            newChar[item.action]()
+                            if(item.action){
+                                newChar[item.action]()
+                            }
+                        }else if(item.method){
+                            this[item.method][item.action](...item.args)
                         }
-                    }else if(item.method){
-                        this[item.method][item.action](...item.args)
+
+                        item.stock--;
+                        if(item.stock === 0){
+                            event.currentTarget.classList.add("sold-out")
+                        }
                     }
+                }else{
+                    shopItem.addEventListener("click", ()=>{
+                        if(!item.stock === 0){
+                            if(this.headerContent.subtractFromTotal(`${item.price}`)){
+                                if(item.newInstance){
+                                    let newClass = classMap[item.class]
+                                    let newChar = new newClass(this.ctx, item.args, this.headerContent)
+        
+                                    if(item.action){
+                                        newChar[item.action]()
+                                    }
+                                }else if(item.method){
+                                    this[item.method][item.action](...item.args)
+                                }
+        
+                                item.stock--;
+                                if(item.stock === 0){
+                                    event.currentTarget.classList.add("sold-out")
+                                }
+                            }
+                        }else{
+                            if(!event.currentTarget.classList.contains("sold-out")){
+                                event.currentTarget.classList.add("sold-out")
+                            }
+                            console.log("Item out of stock")
+                        }
+                    })
+                    console.log("Item out of stock")
                 }
             })
         })
@@ -129,6 +164,11 @@ class ShopContent{
         statsItem.appendChild(maxNugget)
         statsItem.appendChild(digSpeed)
         this.shop.appendChild(statsItem)
+    }
+
+    soldOut(ele){
+        ele.classList.add("sold-out");
+        console.log("sold-out")
     }
 }
 

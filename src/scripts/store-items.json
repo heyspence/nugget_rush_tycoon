@@ -4,7 +4,8 @@
             "name": "tnt",
             "price": "10",
             "imgSrc": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Tools/tnt-big.png",
-            "tooltip":"N/A"
+            "tooltip":"TNT",
+            "stock": 0
         },
         {
             "name": "four-leaf-clover",
@@ -30,7 +31,7 @@
                 "ability": "increaseSpeed"
             },
             "newInstance": true,
-            "tooltip":"Increase dig speed"
+            "tooltip":"Increase speed"
         },
         {
             "name": "level-2-chest",
@@ -43,7 +44,8 @@
                 "ability": "increaseMaxStorage"
             },
             "newInstance": true,
-            "tooltip":"Storage level 1"
+            "tooltip":"Storage level 1",
+            "stock": 1
         },
         {
             "name": "level-1-chest",
@@ -56,7 +58,8 @@
                 "ability": "increaseMaxStorage"
             },
             "newInstance": true,
-            "tooltip":"Storage level 2"
+            "tooltip":"Storage level 2",
+            "stock": 1
         },
         {
             "name": "gold-chest",
@@ -69,7 +72,8 @@
                 "ability": "increaseMaxStorage"
             },
             "newInstance": true,
-            "tooltip":"Storage level 3"
+            "tooltip":"Storage level 3",
+            "stock": 1
         },
         {
             "name": "experienced-hired-hand",
@@ -85,7 +89,8 @@
                 "idleImg": "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_1.png"
             },
             "newInstance": true,
-            "tooltip":"Hired hand"
+            "tooltip":"Hired hand",
+            "stock": 1
         },
         {
             "name": "bank",
@@ -99,7 +104,8 @@
                 "ability":"increaseMaxStorage"
             },
             "newInstance": true,
-            "tooltip":"Bank"
+            "tooltip":"Bank",
+            "stock": 1
         },
         {
             "name": "crown",
@@ -108,7 +114,8 @@
             "method": "mainCharacter",
             "action" : "displayVictoryCrown",
             "args": ["assets/crown.png"],
-            "tooltip":"Crown"
+            "tooltip":"Crown",
+            "stock": 1
         }
     ]
 }
