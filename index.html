@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./dist/main.css" />
+    <script src="./dist/main.js"></script>
+      <link rel="icon" type="image/x-icon" href="assets/output-onlinepngtools (2) copy.png">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <title>Nugget Rush Tycoon</title>
+  </head>
+
+  <body>
+    <div class="main-page" id="background">
+      <div id="header-container">
+        <div class="main-page" id="main-header">
+          <div id="main-total"></div>
+          <div class="btn" id="main-menu"></div>
+        </div>
+        <div id="main-title-container">
+        </div>
+      </div>
+
+      <div id="main-container">
+        <div id="canvas-container">
+          <canvas class="main-page" id="canvas" height="465" width="720">Something went wrong.</canvas>
+          <canvas id="canvas2" height="465" width="720">Something went wrong.</canvas>
+        </div>
+        <div class="main-page" id="main-shop">
+        </div>
+      </div>
+    </div>
+    <img id="main-background-img" style="display: none" src="assets/DALL·E 2023-10-18 16.49.37 - Illustration of a broad desert scene with a central river, occasional tumbleweeds, and sparse vegetation. The horizon is marked by distant mountain si.png">
+  </body>
+
+  <section class="modal hidden">
+      <button class="btn-close">x</button>
+      <div id="modal-text">
+        <h2>Description</h2>
+        <p>Dive into the digital adaptation of "Nugget Rush", inspired by a classic board game. 
+          Created in a week as a front-end application, 
+          it utilizes the Canvas API for smooth gameplay. Join the quest to become a millionare!</p>
+        <h1>Instructions</h1>
+        <ol>
+          <li>1. Start mining for gold by clicking on Lucky Luke.</li>
+          <li>2. Purchase items from the shop to make money faster.</li>
+          <li>3. Win the game by purchasing the golden crown</li>
+        </ol>
+        <audio controls autoplay>
+          <source src="assets/audio/Beat Mekanik - Easy Peasy.mp3" type="audio/mp3">
+        </audio>
+        <a href="https://linkedin.com/in/spencer-heywood-682215a7" target="blank"><img src="assets/ORIGINALS/square_linkedin_logo_icon_214718.png" height="50px" width="50px"></a>
+        <a href="https://github.com/heyspence" target="blank"><img src="assets/ORIGINALS/githublogo.png" height="44px" width="44px"></a>
+      </div>
+      <button id="demo">Cheat</button>
+      <button id="reset">Restart</button>
+  </section>
+  <div class="overlay hidden"></div>
+
+</html>
