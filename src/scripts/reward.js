@@ -1,12 +1,11 @@
 class Reward{
     constructor(ctx, pos, size, rewardPos){
         this.ctx = ctx;
-        this.pos = pos;
+        this.pos = [(pos[0] + rewardPos[0]), (pos[1] + rewardPos[1])];
         this.size = size;
-        this.rewardPos = rewardPos;
 
         this.smallRewardSound = new Audio('assets/audio/little_robot_sound_factory_fantasy_Pickup_Gold_00.mp3');
-        this.bigRewardSound = new Audio('assets/audio/arcade-game-fruit-machine-jackpot-001-short.mp3')
+        this.bigRewardSound = new Audio('assets/audio/arcade-game-fruit-machine-jackpot-001-short.mp3');
 
         if(!localStorage.getItem("maxLoot")){
             localStorage.setItem("maxLoot", 80)
@@ -52,13 +51,13 @@ class Reward{
         this.ctx.fillStyle = "rgb(253 214 67)";
         this.ctx.strokeStyle = "rgb(178 98 18)";
         this.ctx.font = "42px Luckiest Guy";
-        this.ctx.fillText(`+$${num}`, this.pos[0] + this.rewardPos[0], this.pos[1] + this.rewardPos[1]);
-        this.ctx.strokeText(`+$${num}`, this.pos[0] + this.rewardPos[0], this.pos[1] + this.rewardPos[1]);
+        this.ctx.fillText(`+$${num}`, ...this.pos);
+        this.ctx.strokeText(`+$${num}`, ...this.pos);
 
         let textMetrix = this.ctx.measureText(`+$${num}`);
         let textWidth = textMetrix.width;
 
-        setTimeout( ()=> this.ctx.clearRect(this.pos[0] + this.rewardPos[0], (this.pos[1] + this.rewardPos[1] - 38), textWidth, 38), 
+        setTimeout( ()=> this.ctx.clearRect(this.pos[0], (this.pos[1] - 38), textWidth, 38), 
             (800 / this.loadSpeed));
     }
 }

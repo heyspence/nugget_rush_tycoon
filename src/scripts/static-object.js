@@ -27,7 +27,7 @@ class StaticObject{
 
     increaseMaxStorage(){
         let currentStorage = parseInt(localStorage.getItem("maxGold"))
-        localStorage.setItem("maxGold", currentStorage * 20);
+        localStorage.setItem("maxGold", currentStorage * 10);
         ShopContent.updateStats();
     }
 

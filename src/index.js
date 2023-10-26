@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
     const headerContent = new HeaderContent();
     
     const mainCharacterOptions = {
-        pos: [200, 175],
+        pos: [165, 175],
         size: [150, 170],
         rewardPos: [165, 165],
         img1: "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_3.png",

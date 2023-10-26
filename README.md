@@ -1,23 +1,39 @@
 # Nugget Rush Tycoon
 
+Dive into the digital adaptation of "Nugget Rush", inspired by a classic board game. Created in a week as a front-end application, it utilizes the Canvas API for smooth gameplay. Join the quest to become a millionare!
+
+## GamePlay
+
+![Screenshot](assets/gameplay.gif)
+
+
 ## MVP & Features
 In  `Nugget Rush Tycoon` users will be able to:
 
-* Click to mine for gold nuggets
-* Show a loading bar that ends with an animation
-* Purchase equipment from the shop
+* Interact with canvas drawings
+
+![](assets/canvassnippet.png)
+
+* Show a loading bar, character animation and sound effect
+* Purchase items from the shop
+* Recieve ammounts of gold
+
+![](assets/rewardsnippet.png)
+
 * Keep a running total
-* Sound effects / Mute button
 
 In addition, this project will include:
 
-* A loading screen
-* Pause Button
 * Set a maximum amount of gold
-* Refactor config file
+* Item-specific store inventory
+* Scalable code
+* Background music
+* Sophisticated styling
 
 
 ## WireFrames
+
+![](assets/wireframe.png)
 [View WireFrame]
 
 ## Technoledgies, Libraries & APIs
@@ -54,6 +70,11 @@ Wednesday
 Thursday Morning
 * Finishing touches
 
+## Future Additions
+* Expanded shop
+* New canvas element for each item
+* Complex animations
+* Random Adversity events 
 
 
 [View Wireframe]: https://wireframe.cc/foA2oU
