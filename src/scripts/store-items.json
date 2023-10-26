@@ -9,7 +9,7 @@
         },
         {
             "name": "four-leaf-clover",
-            "price": "20",
+            "price": "40",
             "imgSrc": "assets/ORIGINALS/Item 7-1.png.png",
             "class":"Clover",
             "args": { "pos": [110, 230],

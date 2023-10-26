@@ -15,7 +15,7 @@ class ProgressBar{
         }
 
         if(!localStorage.getItem("maxLoot")){
-            localStorage.setItem("maxLoot", 10)
+            localStorage.setItem("maxLoot", 75)
         }
     }
 
@@ -57,7 +57,7 @@ class ProgressBar{
             this.clickableObject.animate()
 
             if(this.currentWidth >= this.size[0]){
-                let reward = Math.floor(Math.random() * this.maxLoot)
+                let reward = this.calculateReward.bind(this)();
                 this.ctx.clearRect(...this.pos, ...this.size);
                 this.clickableObject.addToTotal(reward);
                 this.complete = true;
@@ -98,6 +98,20 @@ class ProgressBar{
         this.clear()
         this.animating = false;
         this.complete = false;
+    }
+
+    calculateReward(){
+        let num = 0
+        let percent = (Math.random() * 100)
+
+        if(percent <= 10){
+            let min = (4/5) * this.maxLoot;
+            let max = this.maxLoot
+            num = Math.ceil(Math.random() * (max - min) + min)
+        }else{
+            num = Math.floor(Math.random() * (this.maxLoot / 10))
+        }
+        return num;
     }
 
     renderReward(num){
