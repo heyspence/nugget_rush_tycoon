@@ -6,6 +6,7 @@ import MainCharacter from './main-character';
 import Horse from './horse';
 import Tnt from './tnt';
 import HiredHand from './hired-hand';
+import Bank from './bank';
 
 class ShopContent{
     constructor(headerContent, mainCharacter){
@@ -86,7 +87,8 @@ class ShopContent{
                 "MainCharacter": MainCharacter,
                 "HiredHand": HiredHand,
                 "Horse": Horse,
-                "Tnt": Tnt
+                "Tnt": Tnt,
+                "Bank": Bank
             }
 
             shopItem.addEventListener("click", (e)=>{

@@ -5,7 +5,7 @@
             "price": "200",
             "imgSrc": "assets/ORIGINALS/props/chest-level-2.png",
             "class":"StaticObject",
-            "args": { "pos": [60, 260],
+            "args": { "pos": [40, 305],
                 "size": [75, 75],
                 "img": "assets/ORIGINALS/props/chest-level-2.png",
                 "ability": "increaseMaxStorage"
@@ -19,7 +19,7 @@
             "price": "500",
             "imgSrc": "assets/ORIGINALS/props/chest-level-1.png",
             "class":"StaticObject",
-            "args": { "pos": [80, 280],
+            "args": { "pos": [60, 325],
                 "size": [75, 75],
                 "img": "assets/ORIGINALS/props/chest-level-1.png",
                 "ability": "increaseMaxStorage"
@@ -33,7 +33,7 @@
             "price": "10000",
             "imgSrc": "assets/ORIGINALS/props/gold-chest.png",
             "class":"StaticObject",
-            "args": { "pos": [110, 300],
+            "args": { "pos": [90, 345],
                 "size": [75, 75],
                 "img": "assets/ORIGINALS/props/gold-chest.png",
                 "ability": "increaseMaxStorage"
@@ -63,12 +63,13 @@
             "name": "bank",
             "price": "10000",
             "imgSrc": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Building's/house copy.png",
-            "class":"StaticObject",
-            "args": { "pos": [350, 70],
+            "class":"Bank",
+            "action":"autoClick",
+            "args": { "pos": [320, 40],
                 "size": [200, 145],
+                "rewardPos": [50, 200],
                 "idleImg": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Building's/house.png",
-                "img": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Building's/house.png",
-                "ability":"increaseMaxStorage"
+                "img1": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Building's/house.png"
             },
             "newInstance": true,
             "tooltip":"Bank",
@@ -89,7 +90,7 @@
             "price": "20",
             "imgSrc": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Tools/tnt-big.png",
             "class":"Tnt",
-            "args": { "pos": [150, 260],
+            "args": { "pos": [120, 260],
                 "size": [40, 40],
                 "img": "assets/ORIGINALS/Wild West Props 16x16 (v1.5)/Tools/tnt-big.png",
                 "ability": "increaseMaxLoot"
@@ -102,7 +103,7 @@
             "price": "40",
             "imgSrc": "assets/ORIGINALS/Item 7-1.png.png",
             "class":"Clover",
-            "args": { "pos": [110, 230],
+            "args": { "pos": [80, 230],
                 "size": [110, 110],
                 "img": "assets/ORIGINALS/Item 7-1.png.png",
                 "ability": "increaseMaxLoot"
@@ -115,7 +116,7 @@
             "price": "80",
             "imgSrc": "assets/pony.png",
             "class":"Horse",
-            "args": { "pos": [145, 250],
+            "args": { "pos": [115, 250],
                 "size": [40, 40],
                 "img": "assets/pony.png",
                 "ability": "increaseSpeed"

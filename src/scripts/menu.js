@@ -36,7 +36,6 @@ class Menu{
 
     cheat(){
         localStorage.setItem("cashOnHand", 100000);
-        localStorage.setItem("maxLoot", 10000);
         location.reload();
     }
 }

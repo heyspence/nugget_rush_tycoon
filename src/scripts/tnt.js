@@ -9,7 +9,7 @@ class Tnt extends StaticObject{
 
     increaseMaxLoot(){
         let currentMin = parseInt(localStorage.getItem("minLoot"))
-        localStorage.setItem("minLoot", currentMin + 1);
+        localStorage.setItem("minLoot", currentMin + 3);
 
         ShopContent.updateStats();
 

@@ -3,7 +3,7 @@ import Reward from "./reward";
 class ProgressBar{
     constructor(ctx, pos, rewardPos, clickableObject){
         this.ctx = ctx;
-        this.pos = [pos[0] - 15, pos[1] - 22];
+        this.pos = [pos[0] + 5, pos[1] - 22];
         this.size = [140, 15];
         this.loadTime = 0.5;
         this.currentWidth = 0;
@@ -13,7 +13,7 @@ class ProgressBar{
         this.reward = new Reward(ctx, pos, this.size, rewardPos)
 
         if(!localStorage.getItem("loadSpeed")){
-            localStorage.setItem("loadSpeed", 0.8)
+            localStorage.setItem("loadSpeed", 1.15)
         }
 
         if(!localStorage.getItem("maxLoot")){
@@ -47,8 +47,8 @@ class ProgressBar{
                 this.reset();
                 return;
             }
-
-            this.clickableObject.animate()
+            
+            if(this.clickableObject.imgList.length > 1) this.clickableObject.animate()
 
             if(this.currentWidth >= this.size[0]){
                 let reward = Reward.calculateReward();

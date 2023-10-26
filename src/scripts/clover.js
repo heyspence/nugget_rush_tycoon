@@ -9,7 +9,7 @@ class Clover extends StaticObject{
 
     increaseMaxLoot(){
         let currentMax = parseInt(localStorage.getItem("maxLoot"))
-        localStorage.setItem("maxLoot", currentMax + 15);
+        localStorage.setItem("maxLoot", currentMax + 25);
 
         ShopContent.updateStats();
 
