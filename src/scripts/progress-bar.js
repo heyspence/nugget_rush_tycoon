@@ -36,7 +36,7 @@ class ProgressBar{
             return;
         }
         if(currentCash >= currentMax){
-            console.log("storage insufficient");
+            // console.log("storage insufficient");
             return;
         }
         

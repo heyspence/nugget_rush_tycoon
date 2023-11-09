@@ -18,7 +18,7 @@ class Menu{
     }
 
     revealModal(){
-        console.log("menu clicked");
+        // console.log("menu clicked");
         this.modal.classList.remove("hidden");
         this.overlay.classList.remove("hidden");
 

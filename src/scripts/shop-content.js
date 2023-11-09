@@ -134,10 +134,10 @@ class ShopContent{
                             if(!event.currentTarget.classList.contains("sold-out")){
                                 event.currentTarget.classList.add("sold-out")
                             }
-                            console.log("Item out of stock")
+                            // console.log("Item out of stock")
                         }
                     })
-                    console.log("Item out of stock")
+                    // console.log("Item out of stock")
                 }
             })
         })
