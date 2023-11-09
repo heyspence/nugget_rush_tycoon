@@ -40,7 +40,7 @@ class HeaderContent {
             this.renderTotal();
             return true;
         }else{
-            console.log("insufficientfunds")
+            // console.log("insufficientfunds")
             return false;
         }
     }

@@ -42,6 +42,7 @@ class Reward{
         }else{
             min = parseFloat(localStorage.getItem("minLoot")) ? parseFloat(localStorage.getItem("minLoot")) : 1;
             num = Math.ceil(Math.random() * ((max / 20) - min) + min);
+            num = num < min ? min : num;
             smallRewardSound.play();
         }
         return num;
