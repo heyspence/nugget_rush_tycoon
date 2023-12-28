@@ -1,6 +1,6 @@
 # Nugget Rush Tycoon
 
-Dive into the digital adaptation of "Nugget Rush", inspired by a classic board game. Created in a week as a front-end application, it utilizes the Canvas API for smooth gameplay. Join the quest to become a millionare!
+Dive into the digital adaptation of "Nugget Rush", inspired by a classic board game. Created in a week as a front-end application, it utilizes the Canvas API for smooth gameplay. Join the quest to hit the jackpot!
 
 ## GamePlay
 
