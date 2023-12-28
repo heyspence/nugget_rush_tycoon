@@ -4,7 +4,7 @@ Dive into the digital adaptation of "Nugget Rush", inspired by a classic board g
 
 ## GamePlay
 
-![Screenshot](assets/gameplay.gif)
+![Screenshot](src/assets/gameplay.gif)
 
 
 ## MVP & Features
@@ -12,13 +12,13 @@ In  `Nugget Rush Tycoon` users will be able to:
 
 * Interact with canvas drawings
 
-![](assets/canvassnippet.png)
+![](src/assets/canvassnippet.png)
 
 * Show a loading bar, character animation and sound effect
 * Purchase items from the shop
 * Recieve ammounts of gold
 
-![](assets/rewardsnippet.png)
+![](src/assets/rewardsnippet.png)
 
 * Keep a running total
 
