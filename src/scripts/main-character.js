@@ -1,9 +1,11 @@
 import ClickableObject from "./clickable-object";
+import Timer from "./timer";
 
 class MainCharacter extends ClickableObject{
-    constructor(ctx, options, headerContent, ...args){
+    constructor(ctx, options, headerContent, timer, ...args){
         super(ctx, options, headerContent);
         this.victorySound = new Audio('assets/audio/success-fanfare-trumpets-6185.mp3');
+        this.timer = timer;
     }
 
     displayVictoryCrown(imgUri){
@@ -16,8 +18,9 @@ class MainCharacter extends ClickableObject{
             this.ctx.drawImage(img, this.pos[0] - 10, this.pos[1] + 10, 110, 110); 
             this.ctx.restore(); 
         }
-    
+        
         img.src = imgUri;
+        this.timer.stopTimer();
     }
 }
 

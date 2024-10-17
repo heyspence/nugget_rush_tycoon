@@ -4,6 +4,7 @@ import HeaderContent from "./scripts/header-content"
 import ShopContent from "./scripts/shop-content";
 import MainCharacter from "./scripts/main-character";
 import Menu from "./scripts/menu";
+import Timer from "./scripts/timer";
 
 window.addEventListener("load", () => {
 
@@ -15,6 +16,7 @@ window.addEventListener("load", () => {
     
     const background = new Background(ctx);
     const menu = new Menu();
+    const timer = new Timer();
     const headerContent = new HeaderContent();
     
     const mainCharacterOptions = {
@@ -26,7 +28,7 @@ window.addEventListener("load", () => {
         idleImg: "assets/Cowboy 4 HiRes/Cowboy4_idle without gun_1.png"
     }
     
-    const mainCharacter = new MainCharacter(ctx2, mainCharacterOptions, headerContent)
+    const mainCharacter = new MainCharacter(ctx2, mainCharacterOptions, headerContent, timer)
     canvas2.addEventListener("click", (event) => {
         const rect = canvas2.getBoundingClientRect();
         const x = event.clientX - rect.left;
@@ -39,5 +41,4 @@ window.addEventListener("load", () => {
     });
     
     const shopContent = new ShopContent(headerContent, mainCharacter)
-})
-    
+})    

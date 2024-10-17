@@ -120,3 +120,17 @@ p {
 .btn {
     cursor: pointer;
 }
+
+#timer-container {
+    width: 250px;
+    height: 50px;
+    background-color: rgb(183 142 114);
+    border: 2px outset rgb(85 146 141);
+    border-radius: 10px;
+    margin: 20px auto;
+    font-size: 25px;
+    color: rgb(38 22 23);
+    font-family: 'Luckiest Guy';
+    text-align: center;
+    line-height: 50px;
+}
