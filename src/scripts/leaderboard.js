@@ -20,6 +20,7 @@ export const postScore = async (username, score) => {
 
     const data = await response.json();
     localStorage.setItem("leaderboard", JSON.stringify(data));
+    displayLeaderboard();
 }
 
 export const collectUsername = () => {
