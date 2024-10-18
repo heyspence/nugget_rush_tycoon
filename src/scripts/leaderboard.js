@@ -2,8 +2,8 @@ import { formatTime } from "./util";
 
 export const postScore = async (username, score) => {
     const apiUrl = process.env.NODE_ENV === 'production'
-        ? 'https://nugget-rush.spencerheywood.com/leaderboard'
-        : 'http://localhost:5004/leaderboard';
+        ? 'https://nugget-rush.spencerheywood.com/api/leaderboard'
+        : 'http://localhost:5004/api/leaderboard';
 
     const response = await fetch(apiUrl, {
         method: "POST",
