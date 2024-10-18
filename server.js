@@ -34,11 +34,12 @@ const getTopScores = (res, statusCode = 200) => {
 // Route to add a new score
 app.post('/api/leaderboard', (req, res) => {
   const { username, score } = req.body;
-  console.log(username, score)
   db.run("INSERT INTO leaderboard (username, score) VALUES (?, ?)", [username, score], function(err) {
     if (err) {
       return res.status(500).json({ error: err.message });
     }
+    const newScoreId = this.lastID; // Capture the last inserted ID
+    console.log(`New score added with ID: ${newScoreId}`);
     getTopScores(res, 201);
   });
 });
