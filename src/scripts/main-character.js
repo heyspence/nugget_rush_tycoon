@@ -24,6 +24,7 @@ class MainCharacter extends ClickableObject{
         this.timer.stopTimer();
         const username = collectUsername();
         postScore(username, this.timer.time);
+        displayLeaderboard();
     }
 }
 
