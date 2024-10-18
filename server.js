@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // Initialize SQLite database
-const db = new sqlite3.Database('leaderboard.db'); // Use 'leaderboard.db' for persistent storage
+const db = new sqlite3.Database(process.env.NODE_ENV === 'production' ? 'leaderboard_prod.db' : 'leaderboard_dev.db'); // Use different databases for development and production
 
 // Create leaderboard table if it doesn't exist
 db.serialize(() => {

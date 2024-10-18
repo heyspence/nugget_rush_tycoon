@@ -14,6 +14,7 @@ export const postScore = async (username, score) => {
     })
 
     if (!response.ok) {
+        console.error(response)
         throw new Error("Failed to post score");
     }
 
