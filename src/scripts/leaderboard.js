@@ -27,7 +27,7 @@ export const collectUsername = () => {
     return username;
 }
 
-export const fetchLeaderboard = () => {
+export const fetchLeaderboard = async () => {
     const apiUrl = process.env.NODE_ENV === 'production'
         ? 'https://nugget-rush.spencerheywood.com/api/leaderboard'
         : 'http://localhost:5004/api/leaderboard';
@@ -45,8 +45,8 @@ const getLeaderboard = () => {
     return leaderboard ? JSON.parse(leaderboard) : [];
 }
 
-export const displayLeaderboard = () => {
-    fetchLeaderboard();
+export const displayLeaderboard = async () => {
+    await fetchLeaderboard();
     const leaderboard = getLeaderboard();
     const leaderboardContainer = document.getElementById("leaderboard-container");
     leaderboardContainer.innerHTML = "";
