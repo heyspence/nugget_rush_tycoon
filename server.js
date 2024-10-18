@@ -32,7 +32,7 @@ const getTopScores = (res, statusCode = 200) => {
 };
 
 // Route to add a new score
-app.post('/leaderboard', (req, res) => {
+app.post('/api/leaderboard', (req, res) => {
   const { username, score } = req.body;
   console.log(username, score)
   db.run("INSERT INTO leaderboard (username, score) VALUES (?, ?)", [username, score], function(err) {
@@ -44,7 +44,7 @@ app.post('/leaderboard', (req, res) => {
 });
 
 // Route to get all scores
-app.get('/leaderboard', (req, res) => {
+app.get('/api/leaderboard', (req, res) => {
   getTopScores(res);
 });
 

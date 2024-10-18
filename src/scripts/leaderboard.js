@@ -28,8 +28,8 @@ export const collectUsername = () => {
 
 export const fetchLeaderboard = () => {
     const apiUrl = process.env.NODE_ENV === 'production'
-        ? 'https://nugget-rush.spencerheywood.com/leaderboard'
-        : 'http://localhost:5004/leaderboard';
+        ? 'https://nugget-rush.spencerheywood.com/api/leaderboard'
+        : 'http://localhost:5004/api/leaderboard';
 
     fetch(apiUrl)
         .then(response => response.json())
