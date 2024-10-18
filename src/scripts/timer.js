@@ -1,6 +1,8 @@
+import { formatTime } from "./util";
+
 class Timer {
     constructor() {
-        this._time = Number(localStorage.getItem("time")) || 0
+        this.time = Number(localStorage.getItem("time")) || 0
         this.startTimer();
         this.intervalId = localStorage.getItem("intervalId") || null;
         this.blinkIntervalId = null;
@@ -41,12 +43,9 @@ class Timer {
             counter++
         }, 400)
     }
-
     draw() {
         const timerContainer = document.querySelector("#timer-container")
-        const minutes = Math.floor(this.time / 60).toString().padStart(2, '0');
-        const seconds = (this.time % 60).toString().padStart(2, '0');
-        const formattedTime = `${minutes}:${seconds}`;
+        const formattedTime = formatTime(this.time);
         timerContainer.textContent = formattedTime;
     }
 }

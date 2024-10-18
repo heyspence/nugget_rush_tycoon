@@ -1,10 +1,10 @@
-import ClickableObject from "./scripts/clickable-object";
 import Background from "./scripts/background";
 import HeaderContent from "./scripts/header-content"
 import ShopContent from "./scripts/shop-content";
 import MainCharacter from "./scripts/main-character";
 import Menu from "./scripts/menu";
 import Timer from "./scripts/timer";
+import { displayLeaderboard } from "./scripts/leaderboard";
 
 window.addEventListener("load", () => {
 
@@ -39,6 +39,8 @@ window.addEventListener("load", () => {
         
         mainCharacter.clickHandler(event);
     });
+
+    displayLeaderboard();
     
     const shopContent = new ShopContent(headerContent, mainCharacter)
 })    

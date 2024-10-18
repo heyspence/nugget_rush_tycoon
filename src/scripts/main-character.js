@@ -1,4 +1,5 @@
 import ClickableObject from "./clickable-object";
+import { collectUsername, postScore } from "./leaderboard";
 import Timer from "./timer";
 
 class MainCharacter extends ClickableObject{
@@ -21,6 +22,8 @@ class MainCharacter extends ClickableObject{
         
         img.src = imgUri;
         this.timer.stopTimer();
+        const username = collectUsername();
+        postScore(username, this.timer.time);
     }
 }
 
